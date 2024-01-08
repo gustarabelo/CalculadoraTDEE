@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=[device-width], initial-scale=1.0">
+    <title>Calculadora TDEE Gustavo</title>
+    <link rel="stylesheet" href="/estilos/styles.css">
+    <link rel="stylesheet" href="estilos/media-query.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <div id="cal-container">
+        <header>
+            <h1>Calculadora TDEE</h1>
+        </header>
+        <form id="dados" autocomplete="on" method="get">
+            <div id="area-sx" class="areas">
+                <h4>Sexo:</h4>
+                <select id="sexo-select">
+                    <option value="masc">Masculino</option>
+                    <option value="femi">Feminino</option>
+                </select>
+            </div>
+            <div id="area-kg" class="areas">
+                <h4>Peso em KG:</h4>
+                <input type="number" id="peso-value" required placeholder="ex: 80.5" min="20" max="300">
+            </div>
+            <div id="area-alt" class="areas">
+                <h4>Altura em cm:</h4>
+                <input type="number" id="alt-value" required placeholder="ex: 175" min="100" max="230">
+            </div>
+            <div id="area-idade" class="areas">
+                <h4>Idade:</h4>
+                <input type="number" id="idade-value" required placeholder="ex: 30" min="10" max="89">
+            </div>
+            <div id="area-ob" class="areas">
+                <h4>Objetivo:</h4>
+                <select id="objetivo-select">
+                    <option value="1.2">Emagrecer Rápido</option>
+                    <option value="1.375">Emagrecer</option>
+                    <option value="1.55" selected>Manter Peso</option>
+                    <option value="1.725">Ganhos Moderados</option>
+                    <option value="1.9">Ganhos Agressivos</option>
+                </select>
+            </div>
+            <div id="area-ob" class="areas">
+                <h4>Nível de Atividade Física:</h4>
+                <select id="ativ-select">
+                    <option value="sed">Sedentário (exercício mínimo)</option>
+                    <option value="sed">Levemente Ativo (1-3 dias por semana)</option>
+                    <option value="sed">Moderadamente Ativo (3-5 dias por semana)</option>
+                    <option value="sed">Muito Ativo (6-7 dias por semana)</option>
+                    <option value="sed">Extremamente Ativo (Atleta, 2x por dia)</option>
+                </select>
+            </div>
+            <p id="calcular">Calcular</p>
+            <!-- <input type="submit" value="Calcular" id="calcular"> -->
+        </form>
+        <div id="result" class="hide">
+            <h3>Calorias para ganho </h3>
+            <div id="area-result">
+                <div>
+                    <h4>Taxa Metabólica Basal</h4>
+                    <p class="resul-input" id="tmb">1833 Calorias</p>
+                </div>
+                <div>
+                    <h4>TDEE</h4>
+                    <p class="resul-input" id="tdee">2841 Calorias</p>
+                </div>
+                <div>
+                    <h4>IMC</h4>
+                    <p class="resul-input" id="imc">25.9 (Sobrepeso)</p>
+                </div>
+                <div>
+                    <h4>Peso Ideal</h4>
+                    <p class="resul-input" id="pesoIdeal">70.2kg</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
