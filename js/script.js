@@ -11,12 +11,18 @@ const tmbValue = document.querySelector("#tmb")
 const tdeeValue = document.querySelector("#tdee")
 const calTotalText = document.querySelector("#calTotal")
 
-const hideFalse = false
+const protValue = document.querySelector("#prot")
+const carbValue = document.querySelector("#carb")
+const gordValue = document.querySelector("#gord")
 
 let tmbCalc;
 let tdeeCalc;
 let totalCal;
 let objetivoCal;
+
+let protCalc
+let gordCalc
+let carbCalc
 
 const calcularTMB = () => {
 
@@ -48,6 +54,8 @@ const calcularCalTotal = () =>{
     }
 
     calTotalText.innerHTML = "Você precisa de " + parseInt(totalCal) + " calorias para " + objetivo.value
+
+    calcularMacros()
 }
 
 const calcularCalObjetivo = () =>{
@@ -69,6 +77,37 @@ const calcularCalObjetivo = () =>{
         break
 
     }
+}
+
+const calcularMacros = () =>{
+
+    let protMulti
+    let gordMulti
+
+    let protCalorias
+    let gordCalorias
+    let carbCalorias
+    
+    if(objetivo.value === "Emagrecer Rápido" || objetivo.value === "Emagrecer"){
+        protMulti = 2.2
+        gordMulti = 0.9
+    }else{
+        protMulti = 1.8
+        gordMulti = 0.8
+    }
+
+    protCalc = peso.value * protMulti
+    protCalorias = protCalc * 4
+
+    gordCalc = peso.value * gordMulti
+    gordCalorias = gordCalc * 9
+
+    carbCalorias = totalCal - protCalorias - gordCalorias
+    carbCalc = carbCalorias / 4
+
+    protValue.innerHTML = protCalc + "g = " + protCalorias + "kcal"
+    gordValue.innerHTML = gordCalc + "g = " + gordCalorias + "kcal"
+    carbValue.innerHTML = parseInt(carbCalc) + "g = " + parseInt(carbCalorias) + "kcal"
 }
 
 calcularButton.addEventListener("click", (e) => {
