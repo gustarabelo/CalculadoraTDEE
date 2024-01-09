@@ -105,8 +105,8 @@ const calcularMacros = () =>{
     carbCalorias = totalCal - protCalorias - gordCalorias
     carbCalc = carbCalorias / 4
 
-    protValue.innerHTML = protCalc + "g = " + protCalorias + "kcal"
-    gordValue.innerHTML = gordCalc + "g = " + gordCalorias + "kcal"
+    protValue.innerHTML = parseInt(protCalc) + "g = " + parseInt(protCalorias) + "kcal"
+    gordValue.innerHTML = parseInt(gordCalc) + "g = " + parseInt(gordCalorias) + "kcal"
     carbValue.innerHTML = parseInt(carbCalc) + "g = " + parseInt(carbCalorias) + "kcal"
 }
 
