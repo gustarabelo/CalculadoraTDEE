@@ -105,9 +105,9 @@ const calcularMacros = () =>{
     carbCalorias = totalCal - protCalorias - gordCalorias
     carbCalc = carbCalorias / 4
 
-    protValue.innerHTML = parseInt(protCalc) + "g = " + parseInt(protCalorias) + "kcal"
-    gordValue.innerHTML = parseInt(gordCalc) + "g = " + parseInt(gordCalorias) + "kcal"
-    carbValue.innerHTML = parseInt(carbCalc) + "g = " + parseInt(carbCalorias) + "kcal"
+    protValue.innerHTML = protCalc.toFixed(1) + "g = " + protCalorias.toFixed(1) + "kcal"
+    gordValue.innerHTML = gordCalc.toFixed(1) + "g = " + gordCalorias.toFixed(1) + "kcal"
+    carbValue.innerHTML = carbCalc.toFixed(1) + "g = " + carbCalorias.toFixed(1) + "kcal"
 }
 
 calcularButton.addEventListener("click", (e) => {
